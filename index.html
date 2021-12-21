@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <script
+      src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"
+      type="text/javascript"
+      charset="UTF-8"
+      data-domain-script="7e6a6e16-7c8d-4b32-9b7e-613a9640f50c"
+    ></script>
+    <script type="text/javascript">
+      // This function is executed any time OneTrust updates the privacy groups.
+      // window.dataLayer contains a list of events related to OneTrust. To implement
+      // the auto-refresh logic, the easiest way is to detect the previous state and the
+      // new one. If groups have changed, we need to reload the site.
+      //
+      // Note that this code is not parsed by webpack, so I'm gonna use the ECMA5
+      function OptanonWrapper() {
+        // Get the events that informs about a change
+        var events = window.dataLayer.filter(function (element) {
+          return (
+            element.event === "OneTrustGroupsUpdated" &&
+            element.OnetrustActiveGroups != null
+          );
+        });
+        var latestEvent = events[events.length - 1];
+        var previousEvent =
+          events.length === 1 ? latestEvent : events[events.length - 2];
+
+        // Perform the push required by OneTrust
+        {
+          window.dataLayer.push({ event: "OneTrustGroupsUpdated" });
+        }
+
+        // Confirm if we need to reload
+        if (
+          latestEvent.OnetrustActiveGroups != previousEvent.OnetrustActiveGroups
+        ) {
+          location.reload();
+        }
+      }
+    </script>
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>Download XAMPP</title>
+
+    <meta
+      name="description"
+      content="Download XAMPP for Windows, Linux, and OS X. Older versions of Solaris are also available."
+    />
+    <meta
+      name="keywords"
+      content="xampp, apache, php, perl, mysql, windows, linux, osx"
+    />
+
+    <link href="./normalize-ef7858ef.css" rel="stylesheet" type="text/css" />
+    <link href="./all-9094427c.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.1.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <script
+      src="/javascripts/modernizr-6bfc3ff0.js"
+      type="text/javascript"
+    ></script>
+
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Apache Friends RSS Feed"
+      href="/feed.xml"
+    />
+
+    <link href="/images/favicon-18f9bd42.png" rel="icon" type="image/png" />
+
+    <script type="text/plain" class="optanon-category-C0002">
+      //<![CDATA[
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-76894-1', 'auto');
+        ga('send', 'pageview');
+      //]]>
+    </script>
+  </head>
+
+  <body class="download">
+    <div id="fb-root"></div>
+    <script type="text/plain" class="optanon-category-C0005">
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=277385395761685";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <div class="contain-to-grid">
+      <nav class="top-bar" data-topbar>
+        <ul class="title-area">
+          <li class="name">
+            <h1><a href="/index.html">Apache Friends</a></h1>
+          </li>
+          <li class="toggle-topbar menu-icon">
+            <a href="#">
+              <span>Menu</span>
+            </a>
+          </li>
+        </ul>
+
+        <section class="top-bar-section">
+          <!-- Right Nav Section -->
+          <ul class="right">
+            <li class="active"><a href="/download.html">Download</a></li>
+            <li class=""><a href="/add-ons.html">Add-ons</a></li>
+            <li class=""><a href="/hosting.html">Hosting</a></li>
+            <li class=""><a href="/community.html">Community</a></li>
+            <li class=""><a href="/about.html">About</a></li>
+            <li class="has-form">
+              <form action="/search.html" method="get">
+                <div class="row collapse">
+                  <div class="large-8 small-9 columns">
+                    <input type="text" name="q" placeholder="Search.." />
+                  </div>
+                  <div class="large-4 small-3 columns">
+                    <input
+                      type="submit"
+                      class="success button expand"
+                      value="Search"
+                    />
+                  </div>
+                </div>
+              </form>
+            </li>
+            <li id="locales" class="has-dropdown">
+              <a href="#"> <img src="/images/flags/en-dd9e149e.png" /> EN </a>
+              <ul class="dropdown">
+                <li>
+                  <a href="/de/download.html">
+                    <img src="/images/flags/de-1daf2d67.png" /> DE
+                  </a>
+                </li>
+                <li>
+                  <a href="/download.html">
+                    <img src="/images/flags/en-dd9e149e.png" /> EN
+                  </a>
+                </li>
+                <li>
+                  <a href="/es/download.html">
+                    <img src="/images/flags/es-a88880bf.png" /> ES
+                  </a>
+                </li>
+                <li>
+                  <a href="/fr/download.html">
+                    <img src="/images/flags/fr-0f67f12d.png" /> FR
+                  </a>
+                </li>
+                <li>
+                  <a href="/hu/download.html">
+                    <img src="/images/flags/hu-9a189d12.png" /> HU
+                  </a>
+                </li>
+                <li>
+                  <a href="/it/download.html">
+                    <img src="/images/flags/it-c786c15b.png" /> IT
+                  </a>
+                </li>
+                <li>
+                  <a href="/jp/download.html">
+                    <img src="/images/flags/jp-3c5b1754.png" /> JP
+                  </a>
+                </li>
+                <li>
+                  <a href="/pl/download.html">
+                    <img src="/images/flags/pl-e383eba9.png" /> PL
+                  </a>
+                </li>
+                <li>
+                  <a href="/pt_br/download.html">
+                    <img src="/images/flags/pt_br-e39a2058.png" /> PT BR
+                  </a>
+                </li>
+                <li>
+                  <a href="/ro/download.html">
+                    <img src="/images/flags/ro-f141b663.png" /> RO
+                  </a>
+                </li>
+                <li>
+                  <a href="/ru/download.html">
+                    <img src="/images/flags/ru-24b172c5.png" /> RU
+                  </a>
+                </li>
+                <li>
+                  <a href="/tr/download.html">
+                    <img src="/images/flags/tr-e1821d04.png" /> TR
+                  </a>
+                </li>
+                <li>
+                  <a href="/ur/download.html">
+                    <img src="/images/flags/ur-952dd97a.png" /> UR
+                  </a>
+                </li>
+                <li>
+                  <a href="/zh_cn/download.html">
+                    <img src="/images/flags/zh_cn-9c7185e0.png" /> ZH CN
+                  </a>
+                </li>
+                <li>
+                  <a href="/zh_tw/download.html">
+                    <img src="/images/flags/zh_tw-92fe4f80.png" /> ZH TW
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+      </nav>
+    </div>
+
+    <div id="wrapper">
+      <div class="hero">
+        <div class="row">
+          <div class="large-12 columns">
+            <h1>Download</h1>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="large-8 columns">
+          <p>
+            XAMPP is an easy to install Apache distribution containing MariaDB,
+            PHP, and Perl. Just download and start the installer. It's that
+            easy.
+          </p>
+          <ul id="downloads">
+            <li id="download-windows">
+              <h3>
+                <img
+                  src="https://www.apachefriends.org/images/windows-logo-e7e0c87e.png"
+                />XAMPP for
+                <strong>Windows</strong>
+                <span>7.3.33, 7.4.26 &amp; 8.0.13</span>
+              </h3>
+              <table>
+                <tr>
+                  <th width="25%">Version</th>
+                  <th width="17.5%" class="show-for-medium-up"></th>
+                  <th width="20%" class="show-for-medium-up">Checksum</th>
+                  <th width="25%"></th>
+                  <th width="12.5%" class="show-for-medium-up">Size</th>
+                </tr>
+                <tr>
+                  <td rowspan="1">7.3.33 / PHP 7.3.33</td>
+                  <td class="show-for-medium-up" rowspan="1">
+                    <a data-dropdown="windows-notes-f27da30a4b" href="#"
+                      >wannacry</a
+                    >
+                  </td>
+
+                  <td class="show-for-medium-up">
+                    <ul class="inline-list">
+                      <li>
+                        <span
+                          data-tooltip
+                          class="has-tip"
+                          title="3090a317058467cc43bd90829d816650"
+                          >md5</span
+                        >
+                      </li>
+                      <li>
+                        <span
+                          data-tooltip
+                          class="has-tip"
+                          title="c2d55ecf1f4262aa5f43fbe66091bce243e8b893"
+                          >sha1</span
+                        >
+                      </li>
+                    </ul>
+                  </td>
+                  <td class="text-right">
+                    <a
+                      class="button"
+                      target="_blank"
+                      href="https://drive.google.com/uc?id=1PCKlph4SV-rsuQuYJlvvP6aq_wkfNc6P&export=download"
+                      >Download (64 bit)</a
+                    >
+                  </td>
+                  <td class="show-for-medium-up">158 Mb</td>
+                </tr>
+                <tr>
+                  <td rowspan="1">7.4.26 / PHP 7.4.26</td>
+                  <td class="show-for-medium-up" rowspan="1">
+                    <a data-dropdown="windows-notes-5c33567ecb" href="#"
+                      >PDF virus</a
+                    >
+                  </td>
+
+                  <td class="show-for-medium-up">
+                    <ul class="inline-list">
+                      <li>
+                        <span
+                          data-tooltip
+                          class="has-tip"
+                          title="16ebb45641e57a7040941dd638648c23"
+                          >md5</span
+                        >
+                      </li>
+                      <li>
+                        <span
+                          data-tooltip
+                          class="has-tip"
+                          title="7d697e3d2dc0314dd88f52f56ceaae7084521aa8"
+                          >sha1</span
+                        >
+                      </li>
+                    </ul>
+                  </td>
+                  <td class="text-right">
+                    <a
+                      class="button"
+                      target="_blank"
+                      href="https://drive.google.com/uc?id=1USjJQdM6dPADaXD6s8sIwsLy2gCQrDW3&export=download"
+                      >Download (64 bit)</a
+                    >
+                  </td>
+                  <td class="show-for-medium-up">160 Mb</td>
+                </tr>
+                <tr>
+                  <td rowspan="1">8.0.13 / PHP 8.0.13</td>
+                  <td class="show-for-medium-up" rowspan="1">
+                    <a data-dropdown="windows-notes-b85ef04541" href="#"
+                      >Botnet</a
+                    >
+                  </td>
+
+                  <td class="show-for-medium-up">
+                    <ul class="inline-list">
+                      <li>
+                        <span
+                          data-tooltip
+                          class="has-tip"
+                          title="744c4058f13b108dfc27d44b4e3d731c"
+                          >md5</span
+                        >
+                      </li>
+                      <li>
+                        <span
+                          data-tooltip
+                          class="has-tip"
+                          title="adadd37e9b8348df225eedd3396712bd6c8c3b47"
+                          >sha1</span
+                        >
+                      </li>
+                    </ul>
+                  </td>
+                  <td class="text-right">
+                    <a
+                      class="button"
+                      target="_blank"
+                      href="https://drive.google.com/uc?id=1X_lb8UIfjWJq9nBv9ntl73tPge-LwoiG&export=download"
+                      >Download (64 bit)</a
+                    >
+                  </td>
+                  <td class="show-for-medium-up">161 Mb</td>
+                </tr>
+              </table>
+              <ul class="inline-list">
+                <li>
+                  <a data-dropdown="windows-requirements" href="#"
+                    >Requirements</a
+                  >
+                </li>
+                <li><a href="/add-ons.html">Add-ons</a></li>
+                <li>
+                  <a href="http://sourceforge.net/projects/xampp/files/"
+                    >More Downloads &raquo;</a
+                  >
+                </li>
+              </ul>
+              <div
+                class="notes"
+                id="windows-notes-f27da30a4b"
+                data-dropdown-content
+              >
+                <p>
+                  <strong>Includes:</strong> Apache 2.4.51, MariaDB 10.4.22, PHP
+                  7.3.33, phpMyAdmin 5.1.1, OpenSSL 1.1.1, XAMPP Control Panel
+                  3.2.4, Webalizer 2.23-04, Mercury Mail Transport System 4.63,
+                  FileZilla FTP Server 0.9.41, Tomcat 8.5.73 (with mod_proxy_ajp
+                  as connector), Strawberry Perl 5.32.1.1 Portable
+                </p>
+              </div>
+              <div
+                class="notes"
+                id="windows-notes-5c33567ecb"
+                data-dropdown-content
+              >
+                <p>
+                  <strong>Includes:</strong> Apache 2.4.51, MariaDB 10.4.22, PHP
+                  7.4.26, phpMyAdmin 5.1.1, OpenSSL 1.1.1, XAMPP Control Panel
+                  3.2.4, Webalizer 2.23-04, Mercury Mail Transport System 4.63,
+                  FileZilla FTP Server 0.9.41, Tomcat 8.5.73 (with mod_proxy_ajp
+                  as connector), Strawberry Perl 5.32.1.1 Portable
+                </p>
+              </div>
+              <div
+                class="notes"
+                id="windows-notes-b85ef04541"
+                data-dropdown-content
+              >
+                <p>
+                  <strong>Includes:</strong> Apache 2.4.51, MariaDB 10.4.22, PHP
+                  8.0.13, phpMyAdmin 5.1.1, OpenSSL 1.1.1, XAMPP Control Panel
+                  3.2.4, Webalizer 2.23-04, Mercury Mail Transport System 4.63,
+                  FileZilla FTP Server 0.9.41, Tomcat 8.5.73 (with mod_proxy_ajp
+                  as connector), Strawberry Perl 5.32.1.1 Portable
+                </p>
+              </div>
+              <div
+                class="notes"
+                id="windows-requirements"
+                data-dropdown-content
+              >
+                <p>
+                  Windows 2008, 2012, Vista, 7, 8 (Important: XP or 2003 not
+                  supported)
+                </p>
+              </div>
+              <p>
+                Windows XP or 2003 are not supported. You can download a
+                compatible version of XAMPP for these platforms
+                <a
+                  href="http://sourceforge.net/projects/xampp/files/XAMPP%20Windows/1.8.2/"
+                  >here</a
+                >.
+              </p>
+            </li>
+            <li id="download-linux">
+              <h3>
+                <img
+                  src="https://www.apachefriends.org/images/windows-logo-e7e0c87e.png"
+                />XAMPP for <strong>Linux</strong>
+                <span>7.3.33, 7.4.26 &amp; 8.0.13</span>
+              </h3>
+              <table>
+                <tr>
+                  <th width="25%">Version</th>
+                  <th width="17.5%" class="show-for-medium-up"></th>
+                  <th width="20%" class="show-for-medium-up">Checksum</th>
+                  <th width="25%"></th>
+                  <th width="12.5%" class="show-for-medium-up">Size</th>
+                </tr>
+                <tr>
+                  <td rowspan="1">7.3.33 / PHP 7.3.33</td>
+                  <td class="show-for-medium-up" rowspan="1">
+                    <a data-dropdown="linux-notes-0f6284e5f5" href="#"
+                      >What's Included?</a
+                    >
+                  </td>
+
+                  <td class="show-for-medium-up">
+                    <ul class="inline-list">
+                      <li>
+                        <span
+                          data-tooltip
+                          class="has-tip"
+                          title="79161b7356fee7839f487ca3859c7d3c"
+                          >md5</span
+                        >
+                      </li>
+                      <li>
+                        <span
+                          data-tooltip
+                          class="has-tip"
+                          title="26bde22e3b639e7192d55be33309df433efed39c"
+                          >sha1</span
+                        >
+                      </li>
+                    </ul>
+                  </td>
+                  <td class="text-right">
+                    <a
+                      class="button"
+                      data-delayed-href="/download_success.html"
+                      target="_blank"
+                      href="https://www.apachefriends.org/xampp-files/7.3.33/xampp-linux-x64-7.3.33-0-installer.run"
+                      >Download (64 bit)</a
+                    >
+                  </td>
+                  <td class="show-for-medium-up">151 Mb</td>
+                </tr>
+                <tr>
+                  <td rowspan="1">7.4.26 / PHP 7.4.26</td>
+                  <td class="show-for-medium-up" rowspan="1">
+                    <a data-dropdown="linux-notes-9e9c02b5c9" href="#"
+                      >What's Included?</a
+                    >
+                  </td>
+
+                  <td class="show-for-medium-up">
+                    <ul class="inline-list">
+                      <li>
+                        <span
+                          data-tooltip
+                          class="has-tip"
+                          title="1268816270afafd8638764bb74beb259"
+                          >md5</span
+                        >
+                      </li>
+                      <li>
+                        <span
+                          data-tooltip
+                          class="has-tip"
+                          title="2be4a99ac491570efb721e1c486fbdadb0a83225"
+                          >sha1</span
+                        >
+                      </li>
+                    </ul>
+                  </td>
+                  <td class="text-right">
+                    <a
+                      class="button"
+                      data-delayed-href="/download_success.html"
+                      target="_blank"
+                      href="https://www.apachefriends.org/xampp-files/7.4.26/xampp-linux-x64-7.4.26-0-installer.run"
+                      >Download (64 bit)</a
+                    >
+                  </td>
+                  <td class="show-for-medium-up">151 Mb</td>
+                </tr>
+                <tr>
+                  <td rowspan="1">8.0.13 / PHP 8.0.13</td>
+                  <td class="show-for-medium-up" rowspan="1">
+                    <a data-dropdown="linux-notes-a6cb172d17" href="#"
+                      >What's Included?</a
+                    >
+                  </td>
+
+                  <td class="show-for-medium-up">
+                    <ul class="inline-list">
+                      <li>
+                        <span
+                          data-tooltip
+                          class="has-tip"
+                          title="dc6c283d587903db62dc1af02ac91a90"
+                          >md5</span
+                        >
+                      </li>
+                      <li>
+                        <span
+                          data-tooltip
+                          class="has-tip"
+                          title="a2389d2d63ef33078ff23e4ae94b6f44051aac9d"
+                          >sha1</span
+                        >
+                      </li>
+                    </ul>
+                  </td>
+                  <td class="text-right">
+                    <a
+                      class="button"
+                      data-delayed-href="/download_success.html"
+                      target="_blank"
+                      href="https://www.apachefriends.org/xampp-files/8.0.13/xampp-linux-x64-8.0.13-0-installer.run"
+                      >Download (64 bit)</a
+                    >
+                  </td>
+                  <td class="show-for-medium-up">151 Mb</td>
+                </tr>
+              </table>
+              <ul class="inline-list">
+                <li>
+                  <a data-dropdown="linux-requirements" href="#"
+                    >Requirements</a
+                  >
+                </li>
+                <li><a href="/add-ons.html">Add-ons</a></li>
+                <li>
+                  <a href="http://sourceforge.net/projects/xampp/files/"
+                    >More Downloads &raquo;</a
+                  >
+                </li>
+              </ul>
+              <div
+                class="notes"
+                id="linux-notes-0f6284e5f5"
+                data-dropdown-content
+              >
+                <p>
+                  <strong>Includes:</strong> Apache 2.4.51, MariaDB 10.4.22, PHP
+                  7.3.33 + SQLite 2.8.17/3.36.0 + multibyte (mbstring) support,
+                  Perl 5.32.1, ProFTPD 1.3.6, phpMyAdmin 5.1.1, OpenSSL 1.1.1l,
+                  GD 2.2.5, Freetype2 2.4.8, libpng 1.6.37, gdbm 1.8.3, zlib
+                  1.2.11, expat 2.0.1, Sablotron 1.0.3, libxml 2.0.1, Ming
+                  0.4.5, Webalizer 2.23-05, pdf class 0.11.7, ncurses 5.9, pdf
+                  class 0.11.7, mod_perl 2.0.11, FreeTDS 0.91, gettext 0.19.8.1,
+                  IMAP C-Client 2007e, OpenLDAP (client) 2.4.48, mcrypt 2.5.8,
+                  mhash 0.9.9.9, cUrl 7.53.1, libxslt 1.1.33, libapreq 2.13,
+                  FPDF 1.7, ICU4C Library 66.1, APR 1.5.2, APR-utils 1.5.4
+                </p>
+              </div>
+              <div
+                class="notes"
+                id="linux-notes-9e9c02b5c9"
+                data-dropdown-content
+              >
+                <p>
+                  <strong>Includes:</strong> Apache 2.4.51, MariaDB 10.4.22, PHP
+                  7.4.26 + SQLite 2.8.17/3.36.0 + multibyte (mbstring) support,
+                  Perl 5.32.1, ProFTPD 1.3.6, phpMyAdmin 5.1.1, OpenSSL 1.1.1l,
+                  GD 2.2.5, Freetype2 2.4.8, libpng 1.6.37, gdbm 1.8.3, zlib
+                  1.2.11, expat 2.0.1, Sablotron 1.0.3, libxml 2.0.1, Ming
+                  0.4.5, Webalizer 2.23-05, pdf class 0.11.7, ncurses 5.9, pdf
+                  class 0.11.7, mod_perl 2.0.11, FreeTDS 0.91, gettext 0.19.8.1,
+                  IMAP C-Client 2007e, OpenLDAP (client) 2.4.48, mcrypt 2.5.8,
+                  mhash 0.9.9.9, cUrl 7.53.1, libxslt 1.1.33, libapreq 2.13,
+                  FPDF 1.7, ICU4C Library 66.1, APR 1.5.2, APR-utils 1.5.4
+                </p>
+              </div>
+              <div
+                class="notes"
+                id="linux-notes-a6cb172d17"
+                data-dropdown-content
+              >
+                <p>
+                  <strong>Includes:</strong> Apache 2.4.51, MariaDB 10.4.22, PHP
+                  8.0.13 & PEAR + SQLite 2.8.17/3.36.0 + multibyte (mbstring)
+                  support, Perl 5.32.1, ProFTPD 1.3.6, phpMyAdmin 5.1.1, OpenSSL
+                  1.1.1l, GD 2.2.5, Freetype2 2.4.8, libpng 1.6.37, gdbm 1.8.3,
+                  zlib 1.2.11, expat 2.0.1, Sablotron 1.0.3, libxml 2.0.1, Ming
+                  0.4.5, Webalizer 2.23-05, pdf class 0.11.7, ncurses 5.9, pdf
+                  class 0.11.7, mod_perl 2.0.11, FreeTDS 0.91, gettext 0.19.8.1,
+                  IMAP C-Client 2007e, OpenLDAP (client) 2.4.48, mcrypt 2.5.8,
+                  mhash 0.9.9.9, cUrl 7.53.1, libxslt 1.1.33, libapreq 2.13,
+                  FPDF 1.7, ICU4C Library 66.1, APR 1.5.2, APR-utils 1.5.4
+                </p>
+              </div>
+              <div class="notes" id="linux-requirements" data-dropdown-content>
+                <p>
+                  Most all distributions of Linux are supported, including
+                  Debian, RedHat, CentOS, Ubuntu, Fedora, Gentoo, Arch, SUSE.
+                </p>
+              </div>
+            </li>
+            <li id="download-apple">
+              <h3>
+                <img
+                  src="https://www.apachefriends.org/images/windows-logo-e7e0c87e.png"
+                />XAMPP for
+                <strong>OS X</strong>
+                <span>7.3.33, 7.4.26, 8.0.13, 7.3.33, 7.4.26 &amp; 8.0.13</span>
+              </h3>
+              <table>
+                <tr>
+                  <th width="25%">Version</th>
+                  <th width="17.5%" class="show-for-medium-up"></th>
+                  <th width="20%" class="show-for-medium-up">Checksum</th>
+                  <th width="25%"></th>
+                  <th width="12.5%" class="show-for-medium-up">Size</th>
+                </tr>
+                <tr>
+                  <td rowspan="1">7.3.33 / PHP 7.3.33</td>
+                  <td class="show-for-medium-up" rowspan="1">
+                    <a data-dropdown="apple-notes-182b437116" href="#"
+                      >What's Included?</a
+                    >
+                  </td>
+
+                  <td class="show-for-medium-up">
+                    <ul class="inline-list">
+                      <li>
+                        <span
+                          data-tooltip
+                          class="has-tip"
+                          title="9658870954a00bdeff6c1508273d7a48"
+                          >md5</span
+                        >
+                      </li>
+                      <li>
+                        <span
+                          data-tooltip
+                          class="has-tip"
+                          title="90576223b4d2820ac9db47dd7713fa6bf7fe0293"
+                          >sha1</span
+                        >
+                      </li>
+                    </ul>
+                  </td>
+                  <td class="text-right">
+                    <a
+                      class="button"
+                      data-delayed-href="/download_success.html"
+                      target="_blank"
+                      href="https://www.apachefriends.org/xampp-files/7.3.33/xampp-osx-7.3.33-0-installer.dmg"
+                      >Download (64 bit)</a
+                    >
+                  </td>
+                  <td class="show-for-medium-up">163 Mb</td>
+                </tr>
+                <tr>
+                  <td rowspan="1">7.4.26 / PHP 7.4.26</td>
+                  <td class="show-for-medium-up" rowspan="1">
+                    <a data-dropdown="apple-notes-29e62a191a" href="#"
+                      >What's Included?</a
+                    >
+                  </td>
+
+                  <td class="show-for-medium-up">
+                    <ul class="inline-list">
+                      <li>
+                        <span
+                          data-tooltip
+                          class="has-tip"
+                          title="355e9f53eccbbe7a13adbfc515894fcc"
+                          >md5</span
+                        >
+                      </li>
+                      <li>
+                        <span
+                          data-tooltip
+                          class="has-tip"
+                          title="4a3fb4739c97fa88c8311b88ce43c008903fe429"
+                          >sha1</span
+                        >
+                      </li>
+                    </ul>
+                  </td>
+                  <td class="text-right">
+                    <a
+                      class="button"
+                      data-delayed-href="/download_success.html"
+                      target="_blank"
+                      href="https://www.apachefriends.org/xampp-files/7.4.26/xampp-osx-7.4.26-0-installer.dmg"
+                      >Download (64 bit)</a
+                    >
+                  </td>
+                  <td class="show-for-medium-up">162 Mb</td>
+                </tr>
+                <tr>
+                  <td rowspan="1">8.0.13 / PHP 8.0.13</td>
+                  <td class="show-for-medium-up" rowspan="1">
+                    <a data-dropdown="apple-notes-5899e36a36" href="#"
+                      >What's Included?</a
+                    >
+                  </td>
+
+                  <td class="show-for-medium-up">
+                    <ul class="inline-list">
+                      <li>
+                        <span
+                          data-tooltip
+                          class="has-tip"
+                          title="f2267b60511d119c0ccbc5698c9b312f"
+                          >md5</span
+                        >
+                      </li>
+                      <li>
+                        <span
+                          data-tooltip
+                          class="has-tip"
+                          title="bad17dc82a2b2b3e72e629559cd1509a2bc794dc"
+                          >sha1</span
+                        >
+                      </li>
+                    </ul>
+                  </td>
+                  <td class="text-right">
+                    <a
+                      class="button"
+                      data-delayed-href="/download_success.html"
+                      target="_blank"
+                      href="https://www.apachefriends.org/xampp-files/8.0.13/xampp-osx-8.0.13-0-installer.dmg"
+                      >Download (64 bit)</a
+                    >
+                  </td>
+                  <td class="show-for-medium-up">163 Mb</td>
+                </tr>
+                <tr>
+                  <td rowspan="1">7.3.33 / PHP 7.3.33</td>
+                  <td class="show-for-medium-up" rowspan="1">
+                    <a data-dropdown="apple-notes-e28cd6be51" href="#"
+                      >What's Included?</a
+                    >
+                  </td>
+
+                  <td class="show-for-medium-up">
+                    <ul class="inline-list">
+                      <li>
+                        <span
+                          data-tooltip
+                          class="has-tip"
+                          title="b25119f8c781b728bffeac20223469b2"
+                          >md5</span
+                        >
+                      </li>
+                      <li>
+                        <span
+                          data-tooltip
+                          class="has-tip"
+                          title="7279bf06546d1dae6946103f18e51019ea6ad464"
+                          >sha1</span
+                        >
+                      </li>
+                    </ul>
+                  </td>
+                  <td class="text-right">
+                    <a
+                      class="button"
+                      data-delayed-href="/download_success.html"
+                      target="_blank"
+                      href="https://www.apachefriends.org/xampp-files/7.3.33/xampp-osx-7.3.33-0-vm.dmg"
+                      >Download (64 bit)</a
+                    >
+                  </td>
+                  <td class="show-for-medium-up">361 Mb</td>
+                </tr>
+                <tr>
+                  <td rowspan="1">7.4.26 / PHP 7.4.26</td>
+                  <td class="show-for-medium-up" rowspan="1">
+                    <a data-dropdown="apple-notes-ec0b68b804" href="#"
+                      >What's Included?</a
+                    >
+                  </td>
+
+                  <td class="show-for-medium-up">
+                    <ul class="inline-list">
+                      <li>
+                        <span
+                          data-tooltip
+                          class="has-tip"
+                          title="92fbd061194f1bc4b7b1fe8c48504951"
+                          >md5</span
+                        >
+                      </li>
+                      <li>
+                        <span
+                          data-tooltip
+                          class="has-tip"
+                          title="b5aa144d685bff03905dc7589d643e8ace46b660"
+                          >sha1</span
+                        >
+                      </li>
+                    </ul>
+                  </td>
+                  <td class="text-right">
+                    <a
+                      class="button"
+                      data-delayed-href="/download_success.html"
+                      target="_blank"
+                      href="https://www.apachefriends.org/xampp-files/7.4.26/xampp-osx-7.4.26-0-vm.dmg"
+                      >Download (64 bit)</a
+                    >
+                  </td>
+                  <td class="show-for-medium-up">360 Mb</td>
+                </tr>
+                <tr>
+                  <td rowspan="1">8.0.13 / PHP 8.0.13</td>
+                  <td class="show-for-medium-up" rowspan="1">
+                    <a data-dropdown="apple-notes-acd57df5bf" href="#"
+                      >What's Included?</a
+                    >
+                  </td>
+
+                  <td class="show-for-medium-up">
+                    <ul class="inline-list">
+                      <li>
+                        <span
+                          data-tooltip
+                          class="has-tip"
+                          title="17e295bab82331d3f2a341b343aa96d2"
+                          >md5</span
+                        >
+                      </li>
+                      <li>
+                        <span
+                          data-tooltip
+                          class="has-tip"
+                          title="9f191b827609b779e196b7569b2efcd3eb14b526"
+                          >sha1</span
+                        >
+                      </li>
+                    </ul>
+                  </td>
+                  <td class="text-right">
+                    <a
+                      class="button"
+                      data-delayed-href="/download_success.html"
+                      target="_blank"
+                      href="https://www.apachefriends.org/xampp-files/8.0.13/xampp-osx-8.0.13-0-vm.dmg"
+                      >Download (64 bit)</a
+                    >
+                  </td>
+                  <td class="show-for-medium-up">360 Mb</td>
+                </tr>
+              </table>
+              <ul class="inline-list">
+                <li>
+                  <a data-dropdown="apple-requirements" href="#"
+                    >Requirements</a
+                  >
+                </li>
+                <li><a href="/add-ons.html">Add-ons</a></li>
+                <li>
+                  <a href="http://sourceforge.net/projects/xampp/files/"
+                    >More Downloads &raquo;</a
+                  >
+                </li>
+              </ul>
+              <div
+                class="notes"
+                id="apple-notes-182b437116"
+                data-dropdown-content
+              >
+                <p>
+                  <strong>Includes:</strong> Apache 2.4.51, MariaDB 10.4.21, PHP
+                  7.3.33 + SQLite 2.8.17/3.36.0 + multibyte (mbstring) support,
+                  Perl 5.32.1, ProFTPD 1.3.6, phpMyAdmin 5.1.1, OpenSSL 1.1.1k,
+                  GD 2.2.5, Freetype2 2.4.8, libpng 1.6.37, gdbm 1.8.3, zlib
+                  1.2.11, expat 2.0.1, Sablotron 1.0.3, libxml 2.0.1, Ming
+                  0.4.5, Webalizer 2.23-05, pdf class 0.11.7, ncurses 5.9, pdf
+                  class 0.11.7, mod_perl 2.0.11, FreeTDS 0.91, gettext 0.19.8.1,
+                  IMAP C-Client 2007e, OpenLDAP (client) 2.4.48, mcrypt 2.5.8,
+                  mhash 0.9.9.9, cUrl 7.53.1, libxslt 1.1.33, libapreq 2.13,
+                  FPDF 1.7, ICU4C Library 66.1, APR 1.5.2, APR-utils 1.5.4
+                </p>
+              </div>
+              <div
+                class="notes"
+                id="apple-notes-29e62a191a"
+                data-dropdown-content
+              >
+                <p>
+                  <strong>Includes:</strong> Apache 2.4.51, MariaDB 10.4.21, PHP
+                  7.4.26 + SQLite 2.8.17/3.36.0 + multibyte (mbstring) support,
+                  Perl 5.32.1, ProFTPD 1.3.6, phpMyAdmin 5.1.1, OpenSSL 1.1.1k,
+                  GD 2.2.5, Freetype2 2.4.8, libpng 1.6.37, gdbm 1.8.3, zlib
+                  1.2.11, expat 2.0.1, Sablotron 1.0.3, libxml 2.0.1, Ming
+                  0.4.5, Webalizer 2.23-05, pdf class 0.11.7, ncurses 5.9, pdf
+                  class 0.11.7, mod_perl 2.0.11, FreeTDS 0.91, gettext 0.19.8.1,
+                  IMAP C-Client 2007e, OpenLDAP (client) 2.4.48, mcrypt 2.5.8,
+                  mhash 0.9.9.9, cUrl 7.53.1, libxslt 1.1.33, libapreq 2.13,
+                  FPDF 1.7, ICU4C Library 66.1, APR 1.5.2, APR-utils 1.5.4
+                </p>
+              </div>
+              <div
+                class="notes"
+                id="apple-notes-5899e36a36"
+                data-dropdown-content
+              >
+                <p>
+                  <strong>Includes:</strong> Apache 2.4.51, MariaDB 10.4.21, PHP
+                  8.0.13 & PEAR + SQLite 2.8.17/3.36.0 + multibyte (mbstring)
+                  support, Perl 5.32.1, ProFTPD 1.3.6, phpMyAdmin 5.1.1, OpenSSL
+                  1.1.1k, GD 2.2.5, Freetype2 2.4.8, libpng 1.6.37, gdbm 1.8.3,
+                  zlib 1.2.11, expat 2.0.1, Sablotron 1.0.3, libxml 2.0.1, Ming
+                  0.4.5, Webalizer 2.23-05, pdf class 0.11.7, ncurses 5.9, pdf
+                  class 0.11.7, mod_perl 2.0.11, FreeTDS 0.91, gettext 0.19.8.1,
+                  IMAP C-Client 2007e, OpenLDAP (client) 2.4.48, mcrypt 2.5.8,
+                  mhash 0.9.9.9, cUrl 7.53.1, libxslt 1.1.33, libapreq 2.13,
+                  FPDF 1.7, ICU4C Library 66.1, APR 1.5.2, APR-utils 1.5.4
+                </p>
+              </div>
+              <div
+                class="notes"
+                id="apple-notes-e28cd6be51"
+                data-dropdown-content
+              >
+                <p>
+                  <strong>Includes:</strong> Apache 2.4.51, MariaDB 10.4.22, PHP
+                  7.3.33 + SQLite 2.8.17/3.36.0 + multibyte (mbstring) support,
+                  Perl 5.32.1, ProFTPD 1.3.6, phpMyAdmin 5.1.1, OpenSSL 1.1.1l,
+                  GD 2.2.5, Freetype2 2.4.8, libpng 1.6.37, gdbm 1.8.3, zlib
+                  1.2.11, expat 2.0.1, Sablotron 1.0.3, libxml 2.0.1, Ming
+                  0.4.5, Webalizer 2.23-05, pdf class 0.11.7, ncurses 5.9, pdf
+                  class 0.11.7, mod_perl 2.0.11, FreeTDS 0.91, gettext 0.19.8.1,
+                  IMAP C-Client 2007e, OpenLDAP (client) 2.4.48, mcrypt 2.5.8,
+                  mhash 0.9.9.9, cUrl 7.53.1, libxslt 1.1.33, libapreq 2.13,
+                  FPDF 1.7, ICU4C Library 66.1, APR 1.5.2, APR-utils 1.5.4
+                </p>
+              </div>
+              <div
+                class="notes"
+                id="apple-notes-ec0b68b804"
+                data-dropdown-content
+              >
+                <p>
+                  <strong>Includes:</strong> Apache 2.4.51, MariaDB 10.4.22, PHP
+                  7.4.26 + SQLite 2.8.17/3.36.0 + multibyte (mbstring) support,
+                  Perl 5.32.1, ProFTPD 1.3.6, phpMyAdmin 5.1.1, OpenSSL 1.1.1l,
+                  GD 2.2.5, Freetype2 2.4.8, libpng 1.6.37, gdbm 1.8.3, zlib
+                  1.2.11, expat 2.0.1, Sablotron 1.0.3, libxml 2.0.1, Ming
+                  0.4.5, Webalizer 2.23-05, pdf class 0.11.7, ncurses 5.9, pdf
+                  class 0.11.7, mod_perl 2.0.11, FreeTDS 0.91, gettext 0.19.8.1,
+                  IMAP C-Client 2007e, OpenLDAP (client) 2.4.48, mcrypt 2.5.8,
+                  mhash 0.9.9.9, cUrl 7.53.1, libxslt 1.1.33, libapreq 2.13,
+                  FPDF 1.7, ICU4C Library 66.1, APR 1.5.2, APR-utils 1.5.4
+                </p>
+              </div>
+              <div
+                class="notes"
+                id="apple-notes-acd57df5bf"
+                data-dropdown-content
+              >
+                <p>
+                  <strong>Includes:</strong> Apache 2.4.51, MariaDB 10.4.22, PHP
+                  8.0.13 & PEAR + SQLite 2.8.17/3.36.0 + multibyte (mbstring)
+                  support, Perl 5.32.1, ProFTPD 1.3.6, phpMyAdmin 5.1.1, OpenSSL
+                  1.1.1l, GD 2.2.5, Freetype2 2.4.8, libpng 1.6.37, gdbm 1.8.3,
+                  zlib 1.2.11, expat 2.0.1, Sablotron 1.0.3, libxml 2.0.1, Ming
+                  0.4.5, Webalizer 2.23-05, pdf class 0.11.7, ncurses 5.9, pdf
+                  class 0.11.7, mod_perl 2.0.11, FreeTDS 0.91, gettext 0.19.8.1,
+                  IMAP C-Client 2007e, OpenLDAP (client) 2.4.48, mcrypt 2.5.8,
+                  mhash 0.9.9.9, cUrl 7.53.1, libxslt 1.1.33, libapreq 2.13,
+                  FPDF 1.7, ICU4C Library 66.1, APR 1.5.2, APR-utils 1.5.4
+                </p>
+              </div>
+              <div class="notes" id="apple-requirements" data-dropdown-content>
+                <p>Mac OS X 10.6 or later.</p>
+              </div>
+            </li>
+          </ul>
+          <h2>Add-ons</h2>
+          <hr />
+          <div>
+            <h3><a name="xampp-applications">Applications</a></h3>
+            <p id="intro">
+              Bitnami provides a free all-in-one tool to install WordPress on
+              top of XAMPP.
+            </p>
+            <p>
+              <i>
+                These software listings are packaged by Bitnami. The respective
+                trademarks mentioned in the offerings are owned by the
+                respective companies, and use of them does not imply any
+                affiliation or endorsement. The software is licensed to you
+                subject to one or more open source licenses and VMware provides
+                the software on an AS-IS basis.
+              </i>
+            </p>
+            <ul id="stack-list">
+              <li>
+                <a href="//bitnami.com/stack/xampp#wordpress">
+                  <img
+                    data-2x="//bitnami.com/assets/stacks/wordpress/img/wordpress-stack-220x234.png"
+                    width="110"
+                    height="117"
+                    alt="WordPress"
+                    src="//bitnami.com/assets/stacks/wordpress/img/wordpress-stack-110x117.png"
+                  />
+                  <span>WordPress</span>
+                  <span class="type">Blog</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="right">
+            <a class="button small" href="/add-ons.html"
+              >XAMPP Add-ons &rarr;</a
+            >
+          </div>
+        </div>
+        <div class="large-4 columns">
+          <aside>
+            <h4>Documentation/FAQs</h4>
+            <p>
+              There is no real manual or handbook for XAMPP. We wrote the
+              documentation in the form of FAQs. Have a burning question that's
+              not answered here? Try the
+              <a href="https://community.apachefriends.org">Forums</a> or
+              <a href="http://stackoverflow.com/search?q=xampp"
+                >Stack Overflow</a
+              >.
+            </p>
+            <ul>
+              <li><a href="/faq_linux.html">Linux FAQs</a></li>
+              <li><a href="/faq_windows.html">Windows FAQs</a></li>
+              <li><a href="/faq_osx.html">OS X FAQs</a></li>
+              <li><a href="/faq_stackman.html">OS X XAMPP-VM FAQs</a></li>
+            </ul>
+            <h4>Add-ons</h4>
+            <a href="/add-ons.html">
+              <img
+                width="60"
+                data-2x="/images/stack-icons@2x-e9a2dc4a.png"
+                src="/images/stack-icons-40cf11c8.png"
+              />
+            </a>
+            <p>
+              Bitnami provides a free all-in-one tool to install WordPress on
+              top of XAMPP. Visit
+              <a href="https://bitnami.com/stack/xampp">Bitnami XAMPP</a> to
+              download the installer.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="row">
+        <div class="large-16 columns">
+          <div class="row">
+            <div class="large-14 columns">
+              <ul class="social">
+                <li class="twitter">
+                  <a href="https://twitter.com/apachefriends"
+                    >Follow us on Twitter</a
+                  >
+                </li>
+                <li class="facebook">
+                  <a href="https://www.facebook.com/we.are.xampp"
+                    >Like us on Facebook</a
+                  >
+                </li>
+                <li class="google">
+                  <a href="https://plus.google.com/+xampp/posts"
+                    >Add us to your G+ Circles</a
+                  >
+                </li>
+              </ul>
+
+              <ul class="inline-list">
+                <li>
+                  <a href="https://www.apachefriends.org/blog.html">Blog</a>
+                </li>
+                <li>
+                  <a href="https://www.vmware.com/help/privacy.html"
+                    >Privacy Policy</a
+                  >
+                </li>
+                <li>
+                  <a href="https://www.vmware.com/help/legal.html"
+                    >Terms of Use</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.vmware.com/help/privacy/california-privacy-rights.html"
+                    >Your California Privacy Rights</a
+                  >
+                </li>
+                <li>
+                  <a target="_blank" href="http://www.fastly.com/">
+                    CDN provided by
+                    <img
+                      width="48"
+                      data-2x="/images/fastly-logo@2x-dad6aac3.png"
+                      src="/images/fastly-logo-08360cb5.png"
+                    />
+                  </a>
+                </li>
+                <li>
+                  <p>Copyright (c) 2021, VMware</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <button id="ot-sdk-btn" class="ot-sdk-show-settings">
+      Cookie Settings
+    </button>
+    <!-- JS Libraries -->
+    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/javascripts/all-d8620939.js" type="text/javascript"></script>
+  </body>
+</html>
